@@ -17,12 +17,11 @@ class PasswordController extends Controller
 
         $email = $request->only('email');
 
-        //validate email
+        //validating email 
         $validator = Validator::make($email, [
             'email' => 'required|email'
         ]);
 
-        //Send failed response if request is not valid
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
         }
@@ -30,6 +29,7 @@ class PasswordController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user) {
+            Log::warning("Email not registered");
             return response()->json([
                 'message' => 'Email is not registered',
             ], 402);
@@ -63,7 +63,6 @@ class PasswordController extends Controller
                 'password_confirmation' => 'required|same:new_password',
             ]);
 
-            //Send failed response if request is not valid
             if ($validator->fails()) {
                 return response()->json(['error' => $validator->errors()], 400);
             }
