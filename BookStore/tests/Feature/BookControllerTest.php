@@ -4,13 +4,9 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-
-
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-
-
 use Tests\TestCase;
 
 class BookControllerTest extends TestCase
@@ -43,7 +39,7 @@ class BookControllerTest extends TestCase
     {
         $response = $this->withHeaders([
             'Content-Type' => 'Application/json',
-            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjYxMjIyMzA3LCJleHAiOjE2NjEyMjU5MDcsIm5iZiI6MTY2MTIyMjMwNywianRpIjoiMFdxcFBnSVJzWkxpOTFUbyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.EQpamOeaC0RHllTiIei7GBXRvlrisuR_rCVMHQRT-gY'
+            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY2MTc0ODA1NSwiZXhwIjoxNjYxNzUxNjU1LCJuYmYiOjE2NjE3NDgwNTUsImp0aSI6Ik8wRTNjd2JldG9PSk84WWEiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.00tn78EFMcNQnG6R81LAvTGyjg8sssKiqypKTCRinWA'
         ])->json('POST', '/api/addingBook', [
             "name" => "LDJSAAS",
             "description" => "IPL ARTICLE",
@@ -59,7 +55,7 @@ class BookControllerTest extends TestCase
     {
         $response = $this->withHeaders([
             'Content-Type' => 'Application/json',
-            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjUwMDMxODM4LCJleHAiOjE2NTAwMzU0MzgsIm5iZiI6MTY1MDAzMTgzOCwianRpIjoiYzhMV2hkMU9MTjRsaXREeCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.j6WmGlYAb4g7IIRlI5PjLEPcx8dKjYlx4oIuqZhi_Jw'
+            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY2MTc0ODA1NSwiZXhwIjoxNjYxNzUxNjU1LCJuYmYiOjE2NjE3NDgwNTUsImp0aSI6Ik8wRTNjd2JldG9PSk84WWEiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.00tn78EFMcNQnG6R81LAvTGyjg8sssKiqypKTCRinWA'
         ])->json(
             'POST',
             '/api/addQuantityToExistBook',
@@ -91,7 +87,7 @@ class BookControllerTest extends TestCase
     {
         $response = $this->withHeaders([
             'Content-Type' => 'Application/json',
-            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjUwMDMxODM4LCJleHAiOjE2NTAwMzU0MzgsIm5iZiI6MTY1MDAzMTgzOCwianRpIjoiYzhMV2hkMU9MTjRsaXREeCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.j6WmGlYAb4g7IIRlI5PjLEPcx8dKjYlx4oIuqZhi_Jw'
+            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY2MTc0ODA1NSwiZXhwIjoxNjYxNzUxNjU1LCJuYmYiOjE2NjE3NDgwNTUsImp0aSI6Ik8wRTNjd2JldG9PSk84WWEiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.00tn78EFMcNQnG6R81LAvTGyjg8sssKiqypKTCRinWA'
         ])->json(
             'POST',
             '/api/deleteBookById',
@@ -101,7 +97,6 @@ class BookControllerTest extends TestCase
         );
         $response->assertStatus(201);
     }
-
 
     public function test_UnSuccessfullDeleteBook()
     {

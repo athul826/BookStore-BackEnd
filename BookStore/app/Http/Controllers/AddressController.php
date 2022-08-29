@@ -101,7 +101,7 @@ class AddressController extends Controller
             }
 
             if ($address_exist->delete()) {
-                Log::info('Address Deleted For Respective User', ['user_id', '=', $currentUser->id]);
+                Log::info('Address Deleted From Respective User', ['user_id', '=', $currentUser->id]);
                 return response()->json(['message' => 'Address deleted Sucessfully'], 201);
             }
         } catch (BookStoreException $exception) {
